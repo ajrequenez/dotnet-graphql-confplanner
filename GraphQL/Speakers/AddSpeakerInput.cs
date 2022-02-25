@@ -1,5 +1,5 @@
 ﻿using System;
-namespace ConferencePlanner.GraphQL
+namespace ConferencePlanner.GraphQL.Speakers
 {
     public record AddSpeakerInput(
         string Name,
