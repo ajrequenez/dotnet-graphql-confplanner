@@ -20,6 +20,8 @@
     <None Remove="Types\" />
     <None Remove="Common\" />
     <None Remove="Speakers\" />
+    <None Remove="Sessions\" />
+    <None Remove="Tracks\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
@@ -27,5 +29,7 @@
     <Folder Include="Types\" />
     <Folder Include="Common\" />
     <Folder Include="Speakers\" />
+    <Folder Include="Sessions\" />
+    <Folder Include="Tracks\" />
   </ItemGroup>
 </Project>
