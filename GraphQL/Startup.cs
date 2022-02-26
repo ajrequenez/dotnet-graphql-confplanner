@@ -22,15 +22,20 @@ namespace ConferencePlanner.GraphQL
             services
                 .AddGraphQLServer()
                 .AddQueryType(d => d.Name("Query"))
+                    .AddTypeExtension<SessionQueries>()
                     .AddTypeExtension<SpeakerQueries>()
+                    .AddTypeExtension<TrackQueries>()
                 .AddMutationType(d => d.Name("Mutation"))
                     .AddTypeExtension<SessionMutations>()
                     .AddTypeExtension<SpeakerMutations>()
-                     .AddTypeExtension<TrackMutations>()
+                    .AddTypeExtension<TrackMutations>()
+                .AddSubscriptionType(d => d.Name("Subscription"))
+                    .AddTypeExtension<SessionSubscriptions>()
                 .AddType<AttendeeType>()
                 .AddType<SessionType>()
                 .AddType<SpeakerType>()
                 .AddType<TrackType>()
+                .AddInMemorySubscriptions()
                 .AddGlobalObjectIdentification()
                 .AddQueryFieldToMutationPayloads();
         }
@@ -43,8 +48,8 @@ namespace ConferencePlanner.GraphQL
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseWebSockets();
             app.UseRouting();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGraphQL();

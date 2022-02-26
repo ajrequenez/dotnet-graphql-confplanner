@@ -22,6 +22,7 @@
     <None Remove="Speakers\" />
     <None Remove="Sessions\" />
     <None Remove="Tracks\" />
+    <None Remove="Atendees\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
@@ -31,5 +32,6 @@
     <Folder Include="Speakers\" />
     <Folder Include="Sessions\" />
     <Folder Include="Tracks\" />
+    <Folder Include="Attendees\" />
   </ItemGroup>
 </Project>
